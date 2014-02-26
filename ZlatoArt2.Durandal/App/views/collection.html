@@ -1,0 +1,51 @@
+<section id="artwork-view" class="view">
+        <div class="hero-unit">
+            <div class="container" data-bind="with: selectedArtist">
+                <h2>
+                    <span data-bind="text: $root.labels.collection.header"></span>                    
+                    <span class="artwork-artist">
+                        <a data-bind="attr: {href: artist().artistLink}">
+                            <span data-bind="text: displayNameWithNarrow"></span> 
+                        </a>
+                    </span>
+                </h2>
+            </div>
+        </div>
+        <div class="container clearfix artwork-container">
+            <div class="row-fluid sidebar-left">
+                <section class="span3 sidebar secondary-column" id="secondary-nav">
+                    <!-- ko if: hasArtists() -->
+                    <aside class="widget">
+                        <h5 class="short_headline">
+                            <span data-bind="text: labels.collection.artists"></span></h5>
+                        <ul class="navigation" data-bind="foreach: artists">
+                            <li data-bind="css: {active: isSelected()} "><a data-bind="attr: {href: artist().collectionLink }"><span data-bind="text: displayName"></span></a></li>
+                        </ul>                      
+                    </aside>
+                    <!-- /ko -->
+                </section>        
+                <div class="span9 primary-column">
+                    <div>
+                        <!-- ko if: hasArtworks() -->
+                        <!-- ko foreach: selectedArtworks -->
+                        <ul class="artwork-brief-image">
+                            <li class="span4 artwork-thumbnail">
+                                <article class="thumbnail artwork-brief">
+                                    <a class="hover fancyme no-underline" data-fancybox-group="gallery" data-bind="attr: {href: artwork().imagePath,  alt: name}">
+                                        <div class="thumbnail-image">
+                                            <img class="img" src="Images/ajax-loader-thumb.gif" data-bind="attr: {src: artwork().thumb, alt: name}" alt="" />
+                                        </div>
+                                        <div>
+                                            <h4 data-bind="text: name" />
+                                        </div>
+                                    </a>
+                                </article>
+                            </li>
+                        </ul>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                    </div>
+                </div>            
+            </div>
+        </div>
+</section>

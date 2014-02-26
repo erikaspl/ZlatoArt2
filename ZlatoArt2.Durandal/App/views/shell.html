@@ -1,0 +1,103 @@
+﻿<!-- mobile navigation trigger-->
+<h5 class="mobile_nav">
+    <a href="javascript:void(0)" data-bind="css: {active: showMobileNav}, click: toggleMobileNav">&nbsp;<span></span></a>
+</h5>
+<!--end mobile navigation trigger-->
+<div id="shellTop-view">
+    <div class="tall-logo">
+        <section class="container preheader" id="top">
+            <ul class="social top-margin" data-bind="foreach: languages">
+                <li>
+                    <a target="_self" href="#" class="socicon" data-bind="click: $parent.setLanguage, attr: { title: enName }, css: {activeLanguage: locale() === $parent.currentLanguage(), inactiveLanguage: locale() !== $parent.currentLanguage()}" >
+                        <img data-bind="attr: { src: flagImagePath, alt: abbreviation }" />
+                    </a>
+                </li>
+            </ul>
+            <div class="top-margin" data-bind="compose: {model: 'viewmodels/social', view: 'views/social-small.html'}"></div>
+            <div class="loader pull-right" data-bind="css: { active: router.isNavigating, active: isHttpRequest }">
+                <i class="icon-spinner icon-2x icon-spin"></i>
+            </div>
+        </section>
+
+        <header class="header clearfix"> <img src="Images/LogoColorTextBelow.jpeg" class="print logo" alt="Zlato Art" />
+            <div class="container"> 
+                <div class="mobile-menu-holder">
+                    <ul class="primary_menu accordmobile" data-bind="foreach: router.navigationModel">
+                        <li data-bind="css: { active: isActive }">
+                            <a data-bind="attr: { href: hash }, html: title"></a>
+                        </li>
+                    </ul>
+                </div>
+                <nav id="main_menu">
+                    <ul class="primary_menu" data-bind="foreach: router.navigationModel">
+                        <li data-bind="css: { active: isActive }">
+                            <a data-bind="attr: { href: hash }, html: title"></a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- begin #logo -->
+                <div id="logo">
+                    <a href="index.html">
+                        <img alt="" src="Images/trans.gif" /><em>Welcome to Zlato Art</em><!--effing ie7 support--></a>
+                </div>
+                <!-- end #logo -->        
+            </div>
+        </header>
+    </div>
+    <div class="container-fluid page-host" data-bind="router: { transition: 'entrance', cacheViews: true }"></div>
+    <footer id="footer" class="clearfix">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span4">
+                    <section>
+                        <h4 data-bind="text: labels.footer.partners"></h4>
+                        <div>
+                            <a href="http://thebusinesscourier.co.uk" target="_blank">The Business Courier</a><br />
+                            <a href="http://ruvr.co.uk/" target="_blank">The Voice Of Russia</a><br />
+                            <a href="http://www.lituanica.co.uk/en/" target="_blank">Lituanica</a><br />
+                            <a href="http://ruconnect.co.uk/news/" target="_blank">RuConnect</a>
+                        </div>
+                    </section>
+                </div>
+                <div class="span4">
+                    <section>
+                        <h4 data-bind="text: labels.footer.contactUs"></h4>
+                        <p>
+                            <strong data-bind="text: labels.footer.email"></strong>
+                            <span data-bind="zlatoEmail: 'value'"></span>
+                        </p>
+                    </section>
+                    <section>
+                        <h4 data-bind="text: labels.footer.followUs"></h4>
+                        <div data-bind="compose: {model: 'viewmodels/social', view: 'views/social-small.html'}"></div>
+                    </section>
+                </div>
+                <div class="span4">
+                    <section>
+                        <h4 data-bind="text: labels.footer.stayUpdated"></h4>
+                        <!-- Begin MailChimp Signup Form -->
+                        <div id="mc_embed_signup">
+                            <form action="http://zlatoart.us6.list-manage.com/subscribe/post?u=d9ef35aa2be2c72fb0b92b639&amp;id=7fb34f492d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <p data-bind="text: labels.footer.signUpForNews"></p>
+                                <div class="input-append">
+                                    <input type="email" value="" name="EMAIL" class="email span6" id="mce-EMAIL" data-bind="attr: {placeholder: labels.emailPlaceHolder}">
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary" data-bind="text: labels.signUpButton"></button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End mc_embed_signup-->
+                    </section>
+                    <!--close section-->
+                </div>
+            </div>
+        </div>
+        <section class="footerCredits">
+            <div class="container">
+                <ul class="clearfix">
+                    <li>© 2014 Zlato Art. All rights reserved.</li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+    <span data-bind="fadeVisible: showBackToTop, click: backToTop" class="backToTop"><a href="#top">back to top</a></span>
+</div>

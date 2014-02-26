@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZlatoArt2.EF", "ZlatoArt2.EF\ZlatoArt2.EF.csproj", "{F62D13A4-EA11-49BC-844C-3FD28B87AB83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZlatoArt2.Model", "ZlatoArt2.Model\ZlatoArt2.Model.csproj", "{B1102C2C-FB7C-4363-8C43-BE7E716CD860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZlatoArt2.Durandal", "ZlatoArt2.Durandal\ZlatoArt2.Durandal.csproj", "{A88B356E-30AB-4478-82A8-EBE5BD362EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZlatoArt2.Email.AWS", "ZlatoArt2.Email.AWS\ZlatoArt2.Email.AWS.csproj", "{10361535-3F55-4D27-B046-DE71E69E294D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZlatoArt2.Durandal.AcceptanceTests", "ZlatoArt2.Durandal.AcceptanceTests\ZlatoArt2.Durandal.AcceptanceTests.csproj", "{720AF0E5-EF68-4075-A482-7FDC504D814E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F62D13A4-EA11-49BC-844C-3FD28B87AB83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62D13A4-EA11-49BC-844C-3FD28B87AB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62D13A4-EA11-49BC-844C-3FD28B87AB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62D13A4-EA11-49BC-844C-3FD28B87AB83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1102C2C-FB7C-4363-8C43-BE7E716CD860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1102C2C-FB7C-4363-8C43-BE7E716CD860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1102C2C-FB7C-4363-8C43-BE7E716CD860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1102C2C-FB7C-4363-8C43-BE7E716CD860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88B356E-30AB-4478-82A8-EBE5BD362EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88B356E-30AB-4478-82A8-EBE5BD362EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88B356E-30AB-4478-82A8-EBE5BD362EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88B356E-30AB-4478-82A8-EBE5BD362EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10361535-3F55-4D27-B046-DE71E69E294D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10361535-3F55-4D27-B046-DE71E69E294D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10361535-3F55-4D27-B046-DE71E69E294D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10361535-3F55-4D27-B046-DE71E69E294D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720AF0E5-EF68-4075-A482-7FDC504D814E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720AF0E5-EF68-4075-A482-7FDC504D814E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720AF0E5-EF68-4075-A482-7FDC504D814E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720AF0E5-EF68-4075-A482-7FDC504D814E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

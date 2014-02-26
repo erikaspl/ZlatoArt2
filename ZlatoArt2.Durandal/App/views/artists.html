@@ -1,0 +1,35 @@
+<section id="artists-view" class="view">
+     <div class="main-content">
+         <div class="hero-unit">
+         	 <!-- ko if: selectedArtist() -->
+             <div class="container">
+                 <h2><span data-bind="text: labels.artists.header"></span><span class="artwork-artist" data-bind="text: selectedArtist().displayName"></span></h2>
+             </div>
+             <!-- /ko -->
+         </div>
+         <div class="container clearfix">
+         <div class="row-fluid sidebar-left">
+	         <section class="span3 sidebar secondary-column" id="secondary-nav">
+	             <!-- ko if: hasArtists() -->
+	             <aside class="widget">
+	                 <ul class="navigation" data-bind="foreach: artists">
+	                     <li data-bind="css: {active: isSelected()} "><a data-bind="attr: {href: artistHash }">
+						<span data-bind="text: displayName"></span></a></li>
+	                 </ul>
+	             </aside>
+	             <!-- /ko -->
+	         </section>
+	         <div class="row-fluid sidebar-left">
+                <div class="span9 primary-column" data-bind="with: selectedArtist">
+                    <p class="text-justify">
+                        <img class="alignleft" data-bind="attr: {src: artist().imagePath}" />
+                        <span data-bind="html: text"></span>
+                    </p>
+                    <p class="details-button">
+                        <button class="btn btn-primary see-artworks" data-bind="click: $root.viewPaintings, text: $root.labels.artists.viewPaintings"></button>
+                    </p>
+                </div>
+            </div>
+	     </div>
+    </div>	
+</section>

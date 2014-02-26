@@ -1,0 +1,76 @@
+<section id="contact-view" class="view">
+	<div class="hero-unit">
+		<div class="container">
+			<h1><span data-bind="text: labels.contact.header"></span></h1>
+		</div>
+	</div>
+	<div class="container clearfix main-content">
+        <div class="row-fluid reverse-order">
+            <div class="span5">
+                <p>
+                    <strong><span data-bind="text: labels.contact.zlatoArt"></span></strong><br />
+                    <strong><span data-bind="text: labels.contact.phone"></span></strong> <a href="tel:+447713565051" class="tele">+44 (0) 7713565051</a><br />
+                    <strong><span data-bind="text: labels.contact.email"></span></strong>
+                    <span data-bind="zlatoEmail: 'value'"></span>
+                </p>
+				<h3 class="short_headline margin-top"><span data-bind="text: labels.contact.stayUpdated"></span></h3>
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="http://zlatoart.us6.list-manage.com/subscribe/post?u=d9ef35aa2be2c72fb0b92b639&amp;id=7fb34f492d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <p data-bind="text: labels.contact.signUpForNews"></p>
+                        <div class="input-append">
+                            <input type="email" value="" name="EMAIL" class="email span6" id="mce-EMAIL" data-bind="attr: {placeholder: labels.emailPlaceHolder}">
+                            <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary" data-bind="text: labels.signUpButton"></button>
+                        </div>
+                    </form>
+                </div>
+                <h3 class="short_headline margin-top"><span data-bind="text: labels.contact.followUs"></span></h3>
+                <div data-bind="compose: {model: 'viewmodels/social', view: 'views/social.html'}"></div>
+            </div>
+            <div class="span7">
+                <div class="control-group">
+                    <label class="control-label" for="inputName">
+                        <i class="icon-user"></i> <span data-bind="text: labels.contact.fullName"></span>
+                    </label>
+                    <div class="controls controls-row">
+                        <input id="inputName" class="input-xxlarge contact" type="text" data-bind="value: message.fullName, valueUpdate: 'afterkeydown'" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">
+                        <i class="icon-envelope"></i> <span data-bind="text: labels.contact.messageEmail"></span>
+                    </label>
+                    <div class="controls controls-row" data-bind="with: message">
+                        <input id="inputEmail" class="input-xxlarge contact" type="text" data-bind="value: email, valueUpdate: 'afterkeydown'" />
+                    </div>
+                </div>                
+                <div class="control-group">
+                    <label class="control-label" for="inputSubject">
+                        <i class="icon-question-sign"></i> <span data-bind="text: labels.contact.subject"></span>
+                    </label>                    
+                    <div class="controls controls-row">
+                        <input id="inputSubject" class="input-xxlarge contact" type="text" data-bind="value: message.subject, valueUpdate: 'afterkeydown'" />
+                    </div>                    
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputMessage">
+                        <i class="icon-pencil"></i> <span data-bind="text: labels.contact.message"></span>
+                    </label>
+                    <div class="controls">
+                        <textarea id="inputMessage" rows="6" class="input-xxlarge contact" data-bind="value: message.text, valueUpdate: 'afterkeydown'"></textarea>
+                    </div>
+                </div> 
+
+                <div class="control-group">
+                    <button class="btn btn-primary" data-bind="command: $root.saveCmd, activity: $root.saveCmd.isExecuting, text: labels.contact.sendMessage"></button>
+                </div>
+
+                <div class="alert alert-info contact fade" data-bind="css: {'in': $root.showSuccessMessage }, visible: showSuccessMessage,  text: labels.contact.emailDelivered">
+                </div>        
+                <div class="alert alert-error contact fade" data-bind="css:{'in': $root.showErrorMessage}, visible: showErrorMessage, html: labels.contact.unableToDeliverEmail">
+                </div>
+            </div>            
+        </div>		
+	</div>
+</section>

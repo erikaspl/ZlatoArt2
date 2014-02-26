@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A88B356E-30AB-4478-82A8-EBE5BD362EBB}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZlatoArt2.Durandal</RootNamespace>
+    <AssemblyName>ZlatoArt2.Durandal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Breeze.WebApi">
+      <HintPath>..\packages\Breeze.Server.WebApi.Core.1.4.2\lib\Breeze.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.WebApi.EF">
+      <HintPath>..\packages\Breeze.Server.WebApi.EF.1.4.2\lib\Breeze.WebApi.EF.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WebActivator">
+      <Private>True</Private>
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BreezeSimpleCorsHandler.cs" />
+    <Compile Include="App_Start\BreezeWebApiConfig.cs" />
+    <Compile Include="App_Start\DurandalBundleConfig.cs" />
+    <Compile Include="App_Start\DurandalConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectDependencyScope.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\ZlatoArtController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\config.js" />
+    <Content Include="App\main.js" />
+    <Content Include="App\services\datacontext.js" />
+    <Content Include="App\services\fancybox.js" />
+    <Content Include="App\services\logger.js" />
+    <Content Include="App\services\model-data.js" />
+    <Content Include="App\services\model.js" />
+    <Content Include="App\viewmodels\artists.js" />
+    <Content Include="App\viewmodels\collection.js" />
+    <Content Include="App\viewmodels\contact.js" />
+    <Content Include="App\viewmodels\home.js" />
+    <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\social.js" />
+    <Content Include="App\views\artists.html" />
+    <Content Include="App\views\collection.html" />
+    <Content Include="App\views\contact.html" />
+    <Content Include="App\views\detail.html" />
+    <Content Include="App\views\home.html" />
+    <Content Include="App\views\shell.html" />
+    <Content Include="App\views\social-small.html" />
+    <Content Include="App\views\social.html" />
+    <Content Include="App_Data\ZlatoArt.sdf" />
+    <Content Include="css\import.css" />
+    <Content Include="css\blog.css" />
+    <Content Include="css\boxed-slider-flexslider.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\font-awesome-ie7.css" />
+    <Content Include="css\font-awesome-ie7.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\font\fontawesome-webfont.svg" />
+    <Content Include="css\gallery-folio-masonry.css" />
+    <Content Include="css\header-1.css" />
+    <Content Include="css\hero-equal-thumb-gallery.css" />
+    <Content Include="css\ie10mobile.css" />
+    <Content Include="css\jquery.fancybox-buttons.css" />
+    <Content Include="css\jquery.fancybox-thumbs.css" />
+    <Content Include="css\jquery.fancybox.css" />
+    <Content Include="css\portfolio.css" />
+    <Content Include="css\socialicoregular.css" />
+    <Content Include="css\starterkit.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\tabs-toggle.css" />
+    <Content Include="css\toastr.css" />
+    <Content Include="css\zlatoart.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="images\50p.png" />
+    <Content Include="images\5p.png" />
+    <Content Include="images\70p.png" />
+    <Content Include="images\70pwhite.png" />
+    <Content Include="images\7p.png" />
+    <Content Include="images\80p.png" />
+    <Content Include="images\80pwhite.png" />
+    <Content Include="images\ajax-loader-thumb.gif" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\ajax-loader_dark.gif" />
+    <Content Include="images\ajax-loader_orange.gif" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\devider.gif" />
+    <Content Include="images\fancy-new-sprite.png" />
+    <Content Include="images\fancy-new-sprite_%402x.png" />
+    <Content Include="images\fancybox_loading.gif" />
+    <Content Include="images\fancybox_overlay.png" />
+    <Content Include="images\fancybox_sprite.png" />
+    <Content Include="images\hr.png" />
+    <Content Include="images\LogoColorTextBelow.jpeg" />
+    <Content Include="images\LogoColorTextBelow.jpg" />
+    <Content Include="images\navtriggerbg.png" />
+    <Content Include="images\rule.png" />
+    <Content Include="images\sidebar-list-icon.png" />
+    <Content Include="images\sliderarrows.png" />
+    <Content Include="images\tall-logo-mobile.jpg" />
+    <Content Include="images\top.png" />
+    <Content Include="images\trans.gif" />
+    <Content Include="images\valid.png" />
+    <Content Include="images\val_asterisk.png" />
+    <Content Include="index.html" />
+    <Content Include="lib\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\images\10p.png" />
+    <Content Include="lib\bootstrap\images\30p.png" />
+    <Content Include="lib\bootstrap\images\50p.png" />
+    <Content Include="lib\bootstrap\images\5p.png" />
+    <Content Include="lib\bootstrap\images\70p.png" />
+    <Content Include="lib\bootstrap\images\70pwhite.png" />
+    <Content Include="lib\bootstrap\images\7p.png" />
+    <Content Include="lib\bootstrap\images\80p.png" />
+    <Content Include="lib\bootstrap\images\80pwhite.png" />
+    <Content Include="lib\bootstrap\images\glyphicons-halflings-white.png" />
+    <Content Include="lib\bootstrap\images\glyphicons-halflings.png" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\breeze\breeze.base.debug.js" />
+    <Content Include="lib\breeze\breeze.base.min.js" />
+    <Content Include="lib\breeze\breeze.debug.js" />
+    <None Include="lib\breeze\breeze.intellisense.js" />
+    <Content Include="lib\breeze\breeze.min.js" />
+    <Content Include="lib\durandal\css\durandal.css" />
+    <Content Include="lib\durandal\img\icon.png" />
+    <Content Include="lib\durandal\img\ios-startup-image-landscape.png" />
+    <Content Include="lib\durandal\img\ios-startup-image-portrait.png" />
+    <Content Include="lib\durandal\js\activator.js" />
+    <Content Include="lib\durandal\js\app.js" />
+    <Content Include="lib\durandal\js\binder.js" />
+    <Content Include="lib\durandal\js\composition.js" />
+    <Content Include="lib\durandal\js\events.js" />
+    <Content Include="lib\durandal\js\plugins\dialog.js" />
+    <Content Include="lib\durandal\js\plugins\history.js" />
+    <Content Include="lib\durandal\js\plugins\http.js" />
+    <Content Include="lib\durandal\js\plugins\observable.js" />
+    <Content Include="lib\durandal\js\plugins\router.js" />
+    <Content Include="lib\durandal\js\plugins\serializer.js" />
+    <Content Include="lib\durandal\js\plugins\widget.js" />
+    <Content Include="lib\durandal\js\system.js" />
+    <Content Include="lib\durandal\js\transitions\entrance.js" />
+    <Content Include="lib\durandal\js\viewEngine.js" />
+    <Content Include="lib\durandal\js\viewLocator.js" />
+    <Content Include="lib\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="lib\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="lib\i18next\i18next-1.7.1.js" />
+    <Content Include="lib\i18next\i18next-1.7.1.min.js" />
+    <Content Include="lib\i18next\i18next.amd.withJQuery-1.7.1.js" />
+    <Content Include="lib\i18next\i18next.amd.withJQuery-1.7.1.min.js" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\1_b.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\1_s.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\2_b.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\2_s.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\3_b.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\3_s.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\4_b.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\4_s.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\5_b.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\5_s.jpg" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\ajax.txt" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\iframe.html" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\demo\index.html" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\lib\jquery-1.10.1.min.js" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\lib\jquery-1.9.0.min.js" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\blank.gif" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\fancybox_loading%402x.gif" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\fancybox_loading.gif" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\fancybox_overlay.png" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\fancybox_sprite%402x.png" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\fancybox_sprite.png" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\helpers\fancybox_buttons.png" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\jquery.fancybox.css" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\jquery.fancybox.js" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\source\jquery.fancybox.pack.js" />
+    <None Include="lib\jquery\jquery-1.9.1.intellisense.js" />
+    <Content Include="lib\jquery\jquery-1.9.1.js" />
+    <Content Include="lib\jquery\jquery-1.9.1.min.js" />
+    <Content Include="lib\jquery\jquery.fancybox-buttons.js" />
+    <Content Include="lib\jquery\jquery.fancybox-media.js" />
+    <Content Include="lib\jquery\jquery.fancybox-thumbs.js" />
+    <Content Include="lib\jquery\jquery.fancybox.js" />
+    <Content Include="lib\jquery\jquery.flexslider-min.js" />
+    <Content Include="lib\jquery\jquery.flexslider.js" />
+    <Content Include="lib\knockout\knockout-2.3.0.debug.js" />
+    <Content Include="lib\knockout\knockout-2.3.0.js" />
+    <Content Include="lib\knockout\knockout.activity.js" />
+    <Content Include="lib\knockout\knockout.command.js" />
+    <Content Include="lib\knockout\knockout.dirtyFlag.js" />
+    <Content Include="lib\knockout\knockout.validation.js" />
+    <Content Include="lib\knockout\knockout.validation.min.js" />
+    <Content Include="lib\q\q.js" />
+    <Content Include="lib\q\q.min.js" />
+    <Content Include="lib\require\almond-custom.js" />
+    <Content Include="lib\require\r.js" />
+    <Content Include="lib\require\require.js" />
+    <Content Include="lib\require\text.js" />
+    <Content Include="lib\toastr\css\toastr.css" />
+    <Content Include="lib\toastr\css\toastr.min.css" />
+    <Content Include="lib\toastr\js\toastr.js" />
+    <Content Include="lib\toastr\js\toastr.min.js" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\Gruntfile.js" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\content\content\toastr.css" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\content\content\toastr.min.css" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\content\scripts\toastr.js" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\content\scripts\toastr.min.js" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\tests\qunit\qunit.css" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\tests\qunit\qunit.js" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\tests\toastr-tests.html" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\tests\unit\toastr-tests.js" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\toastr-icon.png" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\toastr.css" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\toastr.js" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\toastr.min.css" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\toastr.min.js" />
+    <Content Include="lib\underscore\underscore-min.js" />
+    <Content Include="lib\underscore\underscore.js" />
+    <Content Include="Sql\DbDrop.sql" />
+    <Content Include="Sql\DbSchema.sql" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="weyland-config.js" />
+    <Content Include="locales\en\app.json" />
+    <Content Include="locales\ru\app.json" />
+    <Content Include="locales\en-GB\app.json" />
+    <Content Include="locales\en-US\app.json" />
+    <Content Include="locales\dev\app.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Durandal\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Durandal\_splash.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZlatoArt2.EF\ZlatoArt2.EF.csproj">
+      <Project>{f62d13a4-ea11-49bc-844c-3fd28b87ab83}</Project>
+      <Name>ZlatoArt2.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZlatoArt2.Email.AWS\ZlatoArt2.Email.AWS.csproj">
+      <Project>{10361535-3f55-4d27-b046-de71e69e294d}</Project>
+      <Name>ZlatoArt2.Email.AWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZlatoArt2.Model\ZlatoArt2.Model.csproj">
+      <Project>{b1102c2c-fb7c-4363-8c43-be7e716cd860}</Project>
+      <Name>ZlatoArt2.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\font\flexslider-icon.woff" />
+    <Content Include="css\font\fontawesome-webfont.eot" />
+    <Content Include="css\font\fontawesome-webfont.ttf" />
+    <Content Include="css\font\fontawesome-webfont.woff" />
+    <Content Include="css\font\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\font\FontAwesome.otf" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\.gitattributes" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\CHANGELOG.md" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\README.md" />
+    <Content Include="lib\jquery\fancyapps-fancyBox-18d1712\sprite.psd" />
+    <Content Include="lib\jquery\jquery-1.9.1.min.map" />
+    <Content Include="lib\knockout\knockout.validation.min.js.map" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\.gitattributes" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\.gitignore" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\content\content\toastr.less" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\content\scripts\toastr.min.js.map" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.0.0.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.0.0.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.0.1.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.0.1.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.0.2.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.0.2.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.0.3.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.0.3.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.0.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.0.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.1.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.1.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.2.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.2.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.3.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.4.1.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.4.1.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.4.2.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.4.2.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.4.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.4.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.5.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.1.5.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.2.0.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.2.0.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.2.1.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.2.1.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.2.2.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.2.2.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.3.0.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.3.0.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.3.1.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.1.3.1.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.2.0.0-rc1.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.2.0.0-rc1.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.2.0.1.nupkg" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\nuget\toastr.2.0.1.nuspec" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\package.json" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\README.md" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\release checklist.md" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\toastr.less" />
+    <Content Include="lib\toastr\toastr-master\toastr-master\toastr.min.js.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>36056</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:29974/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.                                                                                      
+       Other similar extension points exist, see Microsoft.Common.targets.                                                                                                                
+  <Target Name="BeforeBuild">                                                                                                                                                             
+  </Target>                                                                                                                                                                               
+  <Target Name="AfterBuild">                                                                                                                                                              
+  </Target> -->
+</Project>

@@ -1,0 +1,812 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ZlatoartModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ZlatoartModelStoreContainer">
+          <EntitySet Name="AnnouncementInfoes" EntityType="ZlatoartModel.Store.AnnouncementInfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Announcements" EntityType="ZlatoartModel.Store.Announcements" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ArtistInfoes" EntityType="ZlatoartModel.Store.ArtistInfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Artists" EntityType="ZlatoartModel.Store.Artists" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ArtworkInfoes" EntityType="ZlatoartModel.Store.ArtworkInfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Artworks" EntityType="ZlatoartModel.Store.Artworks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Images" EntityType="ZlatoartModel.Store.Images" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LabelInfoes" EntityType="ZlatoartModel.Store.LabelInfoes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Labels" EntityType="ZlatoartModel.Store.Labels" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Languages" EntityType="ZlatoartModel.Store.Languages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Messages" EntityType="ZlatoartModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Settings" EntityType="ZlatoartModel.Store.Settings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sliders" EntityType="ZlatoartModel.Store.Sliders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Socials" EntityType="ZlatoartModel.Store.Socials" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_AnnouncementInfo_Announcement" Association="ZlatoartModel.Store.FK_AnnouncementInfo_Announcement">
+            <End Role="Announcements" EntitySet="Announcements" />
+            <End Role="AnnouncementInfoes" EntitySet="AnnouncementInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnnouncementInfo_Languages" Association="ZlatoartModel.Store.FK_AnnouncementInfo_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="AnnouncementInfoes" EntitySet="AnnouncementInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_artist_info_To_artists" Association="ZlatoartModel.Store.FK_artist_info_To_artists">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="ArtistInfoes" EntitySet="ArtistInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_artist_info_to_language" Association="ZlatoartModel.Store.FK_artist_info_to_language">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="ArtistInfoes" EntitySet="ArtistInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_artwokr_info_To_artworks" Association="ZlatoartModel.Store.FK_artwokr_info_To_artworks">
+            <End Role="Artworks" EntitySet="Artworks" />
+            <End Role="ArtworkInfoes" EntitySet="ArtworkInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_artwokr_info_To_languages" Association="ZlatoartModel.Store.FK_artwokr_info_To_languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="ArtworkInfoes" EntitySet="ArtworkInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artworks_Artists" Association="ZlatoartModel.Store.FK_Artworks_Artists">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="Artworks" EntitySet="Artworks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_label_info_To_languages" Association="ZlatoartModel.Store.FK_label_info_To_languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="LabelInfoes" EntitySet="LabelInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelLabelInfo" Association="ZlatoartModel.Store.FK_LabelLabelInfo">
+            <End Role="Labels" EntitySet="Labels" />
+            <End Role="LabelInfoes" EntitySet="LabelInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AnnouncementInfoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="AnnouncementId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Announcements">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArtistInfoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="ArtistId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artists">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ImageLink" Type="nvarchar" MaxLength="255" />
+          <Property Name="DisplayOrder" Type="smallint" Nullable="false" />
+          <Property Name="Hash" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ArtworkInfoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ArtworkId" Type="int" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artworks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ThumbLink" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="IsSold" Type="bit" Nullable="false" />
+          <Property Name="ImageLink" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="ArtistId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LabelInfoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="LabelId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Labels">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="LabelName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Abbreviation" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EnName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FlagImage" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Locale" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Subject" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Text" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ImageLocation" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Type" Type="int" />
+        </EntityType>
+        <EntityType Name="Sliders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ImageSrc" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ImageAlt" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Socials">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="LrgImage" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MidImage" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Alt" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_AnnouncementInfo_Announcement">
+          <End Role="Announcements" Type="ZlatoartModel.Store.Announcements" Multiplicity="1" />
+          <End Role="AnnouncementInfoes" Type="ZlatoartModel.Store.AnnouncementInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Announcements">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AnnouncementInfoes">
+              <PropertyRef Name="AnnouncementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnnouncementInfo_Languages">
+          <End Role="Languages" Type="ZlatoartModel.Store.Languages" Multiplicity="1" />
+          <End Role="AnnouncementInfoes" Type="ZlatoartModel.Store.AnnouncementInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AnnouncementInfoes">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_artist_info_To_artists">
+          <End Role="Artists" Type="ZlatoartModel.Store.Artists" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ArtistInfoes" Type="ZlatoartModel.Store.ArtistInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArtistInfoes">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_artist_info_to_language">
+          <End Role="Languages" Type="ZlatoartModel.Store.Languages" Multiplicity="1" />
+          <End Role="ArtistInfoes" Type="ZlatoartModel.Store.ArtistInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArtistInfoes">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_artwokr_info_To_artworks">
+          <End Role="Artworks" Type="ZlatoartModel.Store.Artworks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ArtworkInfoes" Type="ZlatoartModel.Store.ArtworkInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artworks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArtworkInfoes">
+              <PropertyRef Name="ArtworkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_artwokr_info_To_languages">
+          <End Role="Languages" Type="ZlatoartModel.Store.Languages" Multiplicity="1" />
+          <End Role="ArtworkInfoes" Type="ZlatoartModel.Store.ArtworkInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArtworkInfoes">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Artworks_Artists">
+          <End Role="Artists" Type="ZlatoartModel.Store.Artists" Multiplicity="1" />
+          <End Role="Artworks" Type="ZlatoartModel.Store.Artworks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artworks">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_label_info_To_languages">
+          <End Role="Languages" Type="ZlatoartModel.Store.Languages" Multiplicity="1" />
+          <End Role="LabelInfoes" Type="ZlatoartModel.Store.LabelInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LabelInfoes">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelLabelInfo">
+          <End Role="Labels" Type="ZlatoartModel.Store.Labels" Multiplicity="1" />
+          <End Role="LabelInfoes" Type="ZlatoartModel.Store.LabelInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labels">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LabelInfoes">
+              <PropertyRef Name="LabelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZlatoartModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ZlatoartContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ArtistInfoes" EntityType="ZlatoartModel.ArtistInfo" />
+          <EntitySet Name="Artists" EntityType="ZlatoartModel.Artist" />
+          <EntitySet Name="ArtworkInfoes" EntityType="ZlatoartModel.ArtworkInfo" />
+          <EntitySet Name="Artworks" EntityType="ZlatoartModel.Artwork" />
+          <EntitySet Name="Images" EntityType="ZlatoartModel.Image" />
+          <EntitySet Name="LabelInfoes" EntityType="ZlatoartModel.LabelInfo" />
+          <EntitySet Name="Labels" EntityType="ZlatoartModel.Label" />
+          <EntitySet Name="Languages" EntityType="ZlatoartModel.Language" />
+          <EntitySet Name="Settings" EntityType="ZlatoartModel.Setting" />
+          <EntitySet Name="Sliders" EntityType="ZlatoartModel.Slider" />
+          <EntitySet Name="Socials" EntityType="ZlatoartModel.Social" />
+          <AssociationSet Name="FK_artist_info_To_artists" Association="ZlatoartModel.FK_artist_info_To_artists">
+            <End Role="Artist" EntitySet="Artists" />
+            <End Role="AartistInfo" EntitySet="ArtistInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_artist_info_to_language" Association="ZlatoartModel.FK_artist_info_to_language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="AartistInfo" EntitySet="ArtistInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_artwokr_info_To_artworks" Association="ZlatoartModel.FK_artwokr_info_To_artworks">
+            <End Role="Artwork" EntitySet="Artworks" />
+            <End Role="ArtworkInfo" EntitySet="ArtworkInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_artwokr_info_To_languages" Association="ZlatoartModel.FK_artwokr_info_To_languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="ArtworkInfo" EntitySet="ArtworkInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_label_info_To_languages" Association="ZlatoartModel.FK_label_info_To_languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="LabelInfo" EntitySet="LabelInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artworks_Artists" Association="ZlatoartModel.FK_Artworks_Artists">
+            <End Role="Artist" EntitySet="Artists" />
+            <End Role="Artwork" EntitySet="Artworks" />
+          </AssociationSet>
+          <EntitySet Name="Announcements" EntityType="ZlatoartModel.Announcement" />
+          <EntitySet Name="AnnouncementInfoes" EntityType="ZlatoartModel.AnnouncementInfo" />
+          <AssociationSet Name="FK_AnnouncementInfo_Announcement" Association="ZlatoartModel.FK_AnnouncementInfo_Announcement">
+            <End Role="Announcement" EntitySet="Announcements" />
+            <End Role="AnnouncementInfo" EntitySet="AnnouncementInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnnouncementInfo_Languages" Association="ZlatoartModel.FK_AnnouncementInfo_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="AnnouncementInfo" EntitySet="AnnouncementInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="LabelLabelInfo" Association="ZlatoartModel.LabelLabelInfo">
+            <End Role="Label" EntitySet="Labels" />
+            <End Role="LabelInfo" EntitySet="LabelInfoes" />
+          </AssociationSet>
+          <EntitySet Name="Messages" EntityType="ZlatoartModel.Message" />
+        </EntityContainer>
+        <EntityType Name="ArtistInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LanguageId" Nullable="false" />
+          <Property Type="Int32" Name="ArtistId" Nullable="false" />
+          <NavigationProperty Name="Artist" Relationship="ZlatoartModel.FK_artist_info_To_artists" FromRole="AartistInfo" ToRole="Artist" />
+          <NavigationProperty Name="Language" Relationship="ZlatoartModel.FK_artist_info_to_language" FromRole="AartistInfo" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="ImageLink" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="DisplayOrder" Nullable="false" />
+          <NavigationProperty Name="ArtistInfoes" Relationship="ZlatoartModel.FK_artist_info_To_artists" FromRole="Artist" ToRole="AartistInfo" />
+          <NavigationProperty Name="Artworks" Relationship="ZlatoartModel.FK_Artworks_Artists" FromRole="Artist" ToRole="Artwork" />
+          <Property Type="String" Name="Hash" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ArtworkInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ArtworkId" Nullable="false" />
+          <Property Type="Int32" Name="LanguageId" Nullable="false" />
+          <NavigationProperty Name="Artwork" Relationship="ZlatoartModel.FK_artwokr_info_To_artworks" FromRole="ArtworkInfo" ToRole="Artwork" />
+          <NavigationProperty Name="Language" Relationship="ZlatoartModel.FK_artwokr_info_To_languages" FromRole="ArtworkInfo" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Artwork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ThumbLink" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSold" Nullable="false" />
+          <Property Type="String" Name="ImageLink" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+          <NavigationProperty Name="ArtworkInfoes" Relationship="ZlatoartModel.FK_artwokr_info_To_artworks" FromRole="Artwork" ToRole="ArtworkInfo" />
+          <Property Type="Int32" Name="ArtistId" Nullable="false" />
+          <NavigationProperty Name="Artist" Relationship="ZlatoartModel.FK_Artworks_Artists" FromRole="Artwork" ToRole="Artist" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Link" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LabelInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LanguageId" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="ZlatoartModel.FK_label_info_To_languages" FromRole="LabelInfo" ToRole="Language" />
+          <NavigationProperty Name="Label" Relationship="ZlatoartModel.LabelLabelInfo" FromRole="LabelInfo" ToRole="Label" />
+          <Property Type="Int32" Name="LabelId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Label">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="LabelName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LabelInfoes" Relationship="ZlatoartModel.LabelLabelInfo" FromRole="Label" ToRole="LabelInfo" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Abbreviation" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EnName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AartistInfoes" Relationship="ZlatoartModel.FK_artist_info_to_language" FromRole="Language" ToRole="AartistInfo" />
+          <NavigationProperty Name="ArtworkInfoes" Relationship="ZlatoartModel.FK_artwokr_info_To_languages" FromRole="Language" ToRole="ArtworkInfo" />
+          <NavigationProperty Name="LabelInfoes" Relationship="ZlatoartModel.FK_label_info_To_languages" FromRole="Language" ToRole="LabelInfo" />
+          <Property Type="String" Name="FlagImage" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AnnouncementInfoes" Relationship="ZlatoartModel.FK_AnnouncementInfo_Languages" FromRole="Language" ToRole="AnnouncementInfo" />
+          <Property Type="String" Name="Locale" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ImageLocation" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="ZlatoartModel.SettingTypes" Name="Type" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ImageSrc" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImageAlt" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Social">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="LrgImage" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Link" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MidImage" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Alt" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_artist_info_To_artists">
+          <End Type="ZlatoartModel.Artist" Role="Artist" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ZlatoartModel.ArtistInfo" Role="AartistInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AartistInfo">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_artist_info_to_language">
+          <End Type="ZlatoartModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="ZlatoartModel.ArtistInfo" Role="AartistInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AartistInfo">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_artwokr_info_To_artworks">
+          <End Type="ZlatoartModel.Artwork" Role="Artwork" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ZlatoartModel.ArtworkInfo" Role="ArtworkInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artwork">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArtworkInfo">
+              <PropertyRef Name="ArtworkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_artwokr_info_To_languages">
+          <End Type="ZlatoartModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="ZlatoartModel.ArtworkInfo" Role="ArtworkInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArtworkInfo">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_label_info_To_languages">
+          <End Type="ZlatoartModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="ZlatoartModel.LabelInfo" Role="LabelInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LabelInfo">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="LanguageEnum">
+          <Member Name="English" />
+          <Member Name="Russian" />
+        </EnumType>
+        <EnumType Name="SettingTypes">
+          <Member Name="Debug" />
+          <Member Name="Release" />
+        </EnumType>
+        <Association Name="FK_Artworks_Artists">
+          <End Type="ZlatoartModel.Artist" Role="Artist" Multiplicity="1" />
+          <End Type="ZlatoartModel.Artwork" Role="Artwork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artwork">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Announcement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="AnnouncementInfoes" Relationship="ZlatoartModel.FK_AnnouncementInfo_Announcement" FromRole="Announcement" ToRole="AnnouncementInfo" />
+        </EntityType>
+        <EntityType Name="AnnouncementInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LanguageId" Nullable="false" />
+          <Property Type="Int32" Name="AnnouncementId" Nullable="false" />
+          <NavigationProperty Name="Announcement" Relationship="ZlatoartModel.FK_AnnouncementInfo_Announcement" FromRole="AnnouncementInfo" ToRole="Announcement" />
+          <NavigationProperty Name="Language" Relationship="ZlatoartModel.FK_AnnouncementInfo_Languages" FromRole="AnnouncementInfo" ToRole="Language" />
+        </EntityType>
+        <Association Name="FK_AnnouncementInfo_Announcement">
+          <End Type="ZlatoartModel.Announcement" Role="Announcement" Multiplicity="1" />
+          <End Type="ZlatoartModel.AnnouncementInfo" Role="AnnouncementInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Announcement">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AnnouncementInfo">
+              <PropertyRef Name="AnnouncementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnnouncementInfo_Languages">
+          <End Type="ZlatoartModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="ZlatoartModel.AnnouncementInfo" Role="AnnouncementInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AnnouncementInfo">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LabelLabelInfo">
+          <End Type="ZlatoartModel.Label" Role="Label" Multiplicity="1" />
+          <End Type="ZlatoartModel.LabelInfo" Role="LabelInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Label">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LabelInfo">
+              <PropertyRef Name="LabelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Subject" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ZlatoartModelStoreContainer" CdmEntityContainer="ZlatoartContext">
+    <EntitySetMapping Name="ArtistInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.ArtistInfo)">
+        <MappingFragment StoreEntitySet="ArtistInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artists">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Artist)">
+        <MappingFragment StoreEntitySet="Artists">
+          <ScalarProperty Name="Hash" ColumnName="Hash" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArtworkInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.ArtworkInfo)">
+        <MappingFragment StoreEntitySet="ArtworkInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ArtworkId" ColumnName="ArtworkId" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artworks">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Artwork)">
+        <MappingFragment StoreEntitySet="Artworks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ThumbLink" ColumnName="ThumbLink" />
+          <ScalarProperty Name="IsSold" ColumnName="IsSold" />
+          <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Image)">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LabelInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.LabelInfo)">
+        <MappingFragment StoreEntitySet="LabelInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="LabelId" ColumnName="LabelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Labels">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Label)">
+        <MappingFragment StoreEntitySet="Labels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LabelName" ColumnName="LabelName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Language)">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EnName" ColumnName="EnName" />
+          <ScalarProperty Name="FlagImage" ColumnName="FlagImage" />
+          <ScalarProperty Name="Locale" ColumnName="Locale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Setting)">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImageLocation" ColumnName="ImageLocation" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Slider)">
+        <MappingFragment StoreEntitySet="Sliders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImageSrc" ColumnName="ImageSrc" />
+          <ScalarProperty Name="ImageAlt" ColumnName="ImageAlt" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Socials">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Social)">
+        <MappingFragment StoreEntitySet="Socials">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LrgImage" ColumnName="LrgImage" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MidImage" ColumnName="MidImage" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Announcements">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.Announcement)">
+        <MappingFragment StoreEntitySet="Announcements">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnnouncementInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(ZlatoartModel.AnnouncementInfo)">
+        <MappingFragment StoreEntitySet="AnnouncementInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="AnnouncementId" ColumnName="AnnouncementId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="ZlatoartModel.Message">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

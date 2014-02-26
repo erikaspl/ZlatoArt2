@@ -1,0 +1,51 @@
+{
+	"menu" : {
+		"home" : "Главная",
+		"collection": "Коллекция",
+		"contact" : "Контакты",
+		"artists" : "Художники"
+	},
+
+	"labels" : {
+		"aboutUs": "о нас",
+		"viewCollection": "Наши картины",
+		"meetArtists": "Наши художники",
+		"followUs": "Мы в соцсетях",
+		"signUpForNews": "Подписаться на рассылку.",
+		"emailPlaceHolder": "Электронная почта",
+		"signUpButton": "Подписаться",
+		"contactUsBtn": "Свяжитесь с нами →",
+		"artists": {
+			"header" : "Художники",
+			"viewPaintings": "Картины →"
+		},
+		"collection": {
+			"header" : "Коллекция",
+			"artists": "художники"
+		},
+		"contact": {
+			"header" : "Свяжитесь с нами!",
+			"zlatoArt": "Злато Арт",
+			"phone": "телефон:",
+			"email": "почта:",
+			"signUpForNews": "Подпишитесь на рассылку",
+			"stayUpdated": "оставайтесь в курсе",
+			"followUs": "мы в соцсетях",
+			"fullName": "Имя",
+			"messageEmail": "Почта",
+			"subject": "Тема",
+			"message": "Сообщение",
+			"sendMessage": "Отправить",
+			"emailDelivered": "Спасибо за Ваше сообщение. Мы свяжемся с Вами в скором времени.",
+			"unableToDeliverEmail": "Невозможно отправить ваше сообшение. Пожалуйста, свяжитесь с нами через страничку на <a href='http://www.facebook.com/zlatoArt' target='_blank'>Facebook</a>."
+		},		
+		"footer": {
+			"signUpForNews": "Подпишитесь на рассылку. Мы не распространяем, не продаем и не делимся Вашей личной информацией ни с кем.",
+			"stayUpdated": "Оставайтесь в курсе",
+			"contactUs": "Свяжитесь с нами",
+			"email": "почта: ",
+			"followUs": "Мы в соцсетях",
+			"partners": "Наши партнеры"
+		}		
+	}
+}

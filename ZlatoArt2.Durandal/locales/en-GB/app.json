@@ -1,0 +1,51 @@
+{
+	"menu" : {
+		"home" : "Home",
+		"collection": "Collection",
+		"contact" : "Contact",
+		"artists" : "Artists"
+	},
+
+	"labels" : {
+		"aboutUs": "about us",
+		"viewCollection": "View our collection",
+		"meetArtists": "Meet our artists",
+		"followUs": "Follow us",
+		"signUpForNews": "Sign up for our newsletter.",
+		"emailPlaceHolder": "Email Address",
+		"signUpButton": "Sign Up",
+		"contactUsBtn": "Contact Us →",
+		"artists": {
+			"header" : "Artists",
+			"viewPaintings": "View Paintings →"
+		},
+		"collection": {
+			"header" : "Collection",
+			"artists": "artists"
+		},
+		"contact": {
+			"header" : "Let's Keep In Touch!",
+			"zlatoArt": "Zlato Art",
+			"phone": "phone:",
+			"email": "email:",
+			"signUpForNews": "Sign up for newsletter",
+			"stayUpdated": "stay updated",
+			"followUs": "follow us",
+			"fullName": "Full Name",
+			"messageEmail": "Email",
+			"subject": "Subject",
+			"message": "Message",
+			"sendMessage": "Send Message",
+			"emailDelivered": "Your message has been sent. We will contact you shortly.",
+			"unableToDeliverEmail": "We are unable to deliver your message at the moment. Please use our <a href='http://www.facebook.com/zlatoArt' target='_blank'>facebook</a> page to contact us."
+		},		
+		"footer": {
+			"signUpForNews": "Sign up for our newsletter. We won't share your email address.",
+			"stayUpdated": "Stay Updated",
+			"contactUs": "Contact Us",
+			"email": "email: ",
+			"followUs": "Follow us",
+			"partners": "Partners"
+		}
+	}
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b58e2fcca8bc40cebecf7508b9dccdb1" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="ZlatoartModel.ArtistInfo" Width="1.5" PointX="12.875" PointY="3.25" />
+        <EntityTypeShape EntityType="ZlatoartModel.Artist" Width="1.5" PointX="10.375" PointY="3.125" />
+        <EntityTypeShape EntityType="ZlatoartModel.ArtworkInfo" Width="1.5" PointX="5.125" PointY="5.25" />
+        <EntityTypeShape EntityType="ZlatoartModel.Artwork" Width="1.5" PointX="8" PointY="3.875" />
+        <EntityTypeShape EntityType="ZlatoartModel.LabelInfo" Width="1.5" PointX="11.75" PointY="7.375" />
+        <EntityTypeShape EntityType="ZlatoartModel.Label" Width="1.5" PointX="14.375" PointY="8.125" />
+        <EntityTypeShape EntityType="ZlatoartModel.Language" Width="1.875" PointX="8.75" PointY="7.875" />
+        <EntityTypeShape EntityType="ZlatoartModel.Setting" Width="1.5" PointX="7.625" PointY="1.75" />
+        <EntityTypeShape EntityType="ZlatoartModel.Slider" Width="1.5" PointX="4.5" PointY="1.75" />
+        <AssociationConnector Association="ZlatoartModel.FK_artist_info_To_artists" />
+        <AssociationConnector Association="ZlatoartModel.FK_artist_info_to_language" />
+        <AssociationConnector Association="ZlatoartModel.FK_artwokr_info_To_artworks" />
+        <AssociationConnector Association="ZlatoartModel.FK_artwokr_info_To_languages" />
+        <AssociationConnector Association="ZlatoartModel.FK_label_info_To_languages" />
+        <AssociationConnector Association="ZlatoartModel.FK_Artworks_Artists" />
+        <AssociationConnector Association="ZlatoartModel.FK_AnnouncementInfo_Languages" />
+        <EntityTypeShape EntityType="ZlatoartModel.Announcement" Width="1.5" PointX="13.125" PointY="11.5" />
+        <EntityTypeShape EntityType="ZlatoartModel.AnnouncementInfo" Width="2.25" PointX="9" PointY="12" />
+        <AssociationConnector Association="ZlatoartModel.FK_AnnouncementInfo_Announcement" />
+        <AssociationConnector Association="ZlatoartModel.LabelLabelInfo" />
+        <EntityTypeShape EntityType="ZlatoartModel.Message" Width="1.5" PointX="10.875" PointY="0.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
