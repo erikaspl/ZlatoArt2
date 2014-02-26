@@ -383,8 +383,8 @@
     <Content Include="lib\toastr\toastr-master\toastr-master\toastr.min.js" />
     <Content Include="lib\underscore\underscore-min.js" />
     <Content Include="lib\underscore\underscore.js" />
-    <Content Include="Sql\DbDrop.sql" />
-    <Content Include="Sql\DbSchema.sql" />
+    <None Include="Sql\DbDrop.sql" />
+    <None Include="Sql\DbSchema.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
