@@ -203,7 +203,6 @@
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\social-small.html" />
     <Content Include="App\views\social.html" />
-    <Content Include="App_Data\ZlatoArt.sdf" />
     <Content Include="css\import.css" />
     <Content Include="css\blog.css" />
     <Content Include="css\boxed-slider-flexslider.css" />
@@ -499,6 +498,9 @@
     <Content Include="lib\toastr\toastr-master\toastr-master\release checklist.md" />
     <Content Include="lib\toastr\toastr-master\toastr-master\toastr.less" />
     <Content Include="lib\toastr\toastr-master\toastr-master\toastr.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
