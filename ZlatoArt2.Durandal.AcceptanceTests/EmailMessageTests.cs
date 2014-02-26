@@ -24,7 +24,7 @@ namespace ZlatoArt2.Durandal.AcceptanceTests
             _server = HttpSelfHost.GetServer();
         }
 
-        [Fact]
+        //[Fact]
         public void EmailRequestStubsTest()
         {
             var kernel = new StandardKernel();
@@ -78,7 +78,7 @@ namespace ZlatoArt2.Durandal.AcceptanceTests
             }
         }
 
-        [Fact]
+        //[Fact]
         [UseDatabase]
         public void EmailRequestTestRealDb()
         {
@@ -114,7 +114,7 @@ namespace ZlatoArt2.Durandal.AcceptanceTests
             }
         }
 
-        [Fact]
+        //[Fact]
         public void EmailSenderExceptionTest()
         {
             var kernel = new StandardKernel();
