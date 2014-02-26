@@ -21,7 +21,7 @@ namespace ZlatoArt2.Durandal
             var entityConn = new EntityConnectionStringBuilder(connStr);
             var dbName = new SqlConnectionStringBuilder(entityConn.ProviderConnectionString).InitialCatalog;
             var sysConnection = new SqlConnectionStringBuilder(entityConn.ProviderConnectionString) { InitialCatalog = "Master" };
-            ExecuteDbScript(sysConnection.ConnectionString, Resources.DbSchema, new Dictionary<string, string> { { "%dbname%", dbName } });
+            //ExecuteDbScript(sysConnection.ConnectionString, Resources.DbSchema, new Dictionary<string, string> { { "%dbname%", dbName } });
         }
 
         public void UninstallDatabase()
@@ -30,7 +30,7 @@ namespace ZlatoArt2.Durandal
             var entityConn = new EntityConnectionStringBuilder(connStr);
             var dbName = new SqlConnectionStringBuilder(entityConn.ProviderConnectionString).InitialCatalog;
             var sysConnection = new SqlConnectionStringBuilder(entityConn.ProviderConnectionString) { InitialCatalog = "Master" };
-            ExecuteDbScript(sysConnection.ConnectionString, Resources.DbDrop, new Dictionary<string, string> { { "%dbname%", dbName } });
+            //ExecuteDbScript(sysConnection.ConnectionString, Resources.DbDrop, new Dictionary<string, string> { { "%dbname%", dbName } });
         }
 
         private void ExecuteDbScript(string connectionString, string script, Dictionary<string, string> scriptParams)
