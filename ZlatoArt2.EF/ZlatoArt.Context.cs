@@ -17,7 +17,8 @@ namespace ZlatoArt2.EF
     public partial class ZlatoartContext : DbContext
     {
         public ZlatoartContext()
-            : base("name=ZlatoartContext")
+            //: base("name=ZlatoartContext")
+            : base(ZlatoArtContainer.GetConnectionString())
         {
         }
     
