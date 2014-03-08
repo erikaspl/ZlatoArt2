@@ -24,18 +24,6 @@ namespace ZlatoArt2.Durandal.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
-        public HttpResponseMessage Get()
-        {
-            return Request.CreateResponse(HttpStatusCode.OK);
-        }
-
-        //[HttpPost]
-        //public HttpResponseMessage PostTest(Model.Message message)
-        //{
-        //    return Request.CreateResponse(HttpStatusCode.OK);
-        //}
-
         [HttpPost]
         public HttpResponseMessage Post(Model.Message message)
         {

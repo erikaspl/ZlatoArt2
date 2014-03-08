@@ -224,7 +224,7 @@ define(['durandal/system','services/model','config', 'services/logger', 'Q'],
     };
 
     var saveMessage = function(message){
-        var url = config.mvcControllerUrl + "Message/PostTest";
+        var url = config.mvcControllerUrl + "Message/Post";
         var deferred = Q.defer();
         $.post(url, {text: message.text, subject: message.subject, email: message.email, fullName: message.fullName })
             .success(function(){
@@ -236,8 +236,6 @@ define(['durandal/system','services/model','config', 'services/logger', 'Q'],
 
         return deferred.promise;
     }
-
-
    
     var datacontext = {
         primeData: primeData,
