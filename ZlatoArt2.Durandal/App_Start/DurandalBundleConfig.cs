@@ -23,7 +23,7 @@ namespace ZlatoArt2.Durandal {
 		);
 
       bundles.Add(
-        new StyleBundle("~/css")
+        new StyleBundle("~/styles")
           .Include("~/lib/bootstrap/css/bootstrap.css")
           .Include("~/lib/bootstrap/css/bootstrap-responsive.css")
           .Include("~/lib/toastr/css/toastr.css")
