@@ -18,7 +18,7 @@ namespace ZlatoArt2.Durandal
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(NinjectWebCommon.Kernel);
-            //DurandalBundleConfig.RegisterBundles(BundleTable.Bundles);
+            DurandalBundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

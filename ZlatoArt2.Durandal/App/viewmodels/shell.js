@@ -71,7 +71,7 @@
             }
         });      
             
-        return router.activate();
+        return router.activate({ pushState : true });
     }
 
     return {

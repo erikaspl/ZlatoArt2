@@ -47,7 +47,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/bin
         lng: window.navigator.userLanguage || window.navigator.language || 'en',
         fallbackLang: 'en',
         ns: 'app',
-        resGetPath: 'locales/__lng__/__ns__.json',
+        resGetPath: '/locales/__lng__/__ns__.json',
         useCookie: false,
         preload: ['ru']
     };

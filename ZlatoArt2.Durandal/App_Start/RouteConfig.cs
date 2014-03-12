@@ -11,8 +11,8 @@ namespace ZlatoArt2.Durandal
 
             routes.MapRoute(
               name: "Default",
-              url: "{controller}/{action}/{id}",
-              defaults: new { action = "Index", id = UrlParameter.Optional }
+              url: "{*url}",
+              defaults: new { controller = "Home", action = "Index" }
               );
         }
     }

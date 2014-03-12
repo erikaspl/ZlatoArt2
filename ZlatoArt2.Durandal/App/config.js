@@ -127,10 +127,10 @@
     };
 
     var hashes = {
-      artists: '#/artists',
-      collection: '#artcollection',
-      artists: '#artists',
-      contact: '#contact'
+      artists: 'artists',
+      collection: 'artcollection',
+      artists: 'artists',
+      contact: 'contact'
     };
 
     var routes = [

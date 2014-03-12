@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrap.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ZlatoArtController.cs" />
     <Compile Include="Global.asax.cs">
@@ -385,6 +386,7 @@
     <Content Include="lib\underscore\underscore.js" />
     <None Include="Sql\DbDrop.sql" />
     <None Include="Sql\DbSchema.sql" />
+    <Content Include="phantomjs.exe" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -416,13 +418,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Durandal\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Durandal\_splash.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="readme.md" />
+    <Content Include="Views\Home\_splash.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZlatoArt2.EF\ZlatoArt2.EF.csproj">

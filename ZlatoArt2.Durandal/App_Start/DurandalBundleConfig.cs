@@ -14,6 +14,10 @@ namespace ZlatoArt2.Durandal {
             .Include("~/lib/jquery/jquery.fancybox.js")
             .Include("~/lib/jquery/jquery.fancybox-thumbs.js")
             .Include("~/lib/knockout/knockout-{version}.js")
+            .Include("~/lib/knockout/knockout.activity.js")
+            .Include("~/lib/knockout/knockout.command.js")
+            .Include("~/lib/knockout/knockout.validation.js")
+            .Include("~/lib/knockout/knockout.dirtyFlag.js")
             .Include("~/lib/toastr/js/toastr.js")
             .Include("~/lib/underscore/underscore.js")
 		);
@@ -39,7 +43,8 @@ namespace ZlatoArt2.Durandal {
           .Include("~/css/portfolio.css")
           .Include("~/css/socialicoregular.css")
           .Include("~/css/style.css")
-          .Include("~/css/css/tabs-toggle.css")
+          .Include("~/css/tabs-toggle.css")
+          .Include("~/css/toastr.css")
           .Include("~/css/zlatoart.css")
         );
     }
