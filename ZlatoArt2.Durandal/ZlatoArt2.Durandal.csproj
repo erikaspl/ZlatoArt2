@@ -212,7 +212,7 @@
     <Content Include="css\font-awesome-ie7.min.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
-    <Content Include="css\font\fontawesome-webfont.svg" />
+    <Content Include="font\fontawesome-webfont.svg" />
     <Content Include="css\gallery-folio-masonry.css" />
     <Content Include="css\header-1.css" />
     <Content Include="css\hero-equal-thumb-gallery.css" />
@@ -438,11 +438,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\font\flexslider-icon.woff" />
-    <Content Include="css\font\fontawesome-webfont.eot" />
-    <Content Include="css\font\fontawesome-webfont.ttf" />
-    <Content Include="css\font\fontawesome-webfont.woff" />
-    <Content Include="css\font\FontAwesome.otf" />
+    <Content Include="font\flexslider-icon.woff" />
+    <Content Include="font\fontawesome-webfont.eot" />
+    <Content Include="font\fontawesome-webfont.ttf" />
+    <Content Include="font\fontawesome-webfont.woff" />
+    <Content Include="font\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\font-awesome\font\fontawesome-webfont.eot" />
